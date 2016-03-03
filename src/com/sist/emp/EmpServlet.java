@@ -56,10 +56,29 @@ public class EmpServlet extends HttpServlet{
         printWriter.println("<th>사원등급</th>");
         printWriter.println("</tr>");
 
+        String color="";
+        int i=0;
+        for(EmpDTO empDTO:arrayList){
+            if(i%2==0)
+                color="white";
+            else
+                color="#ccffcc";
+            printWriter.println("<tr bgcolor="+color+">");
+            printWriter.println("<td>" +empDTO.getEmpno()+ "</td>");
 
+            printWriter.println("<td>");
+            printWriter.println("<a href=EmpDetailServlet?empno=" +empDTO.getEmpno()+">");
+            printWriter.println(empDTO.getEname() +"</a>");
+            printWriter.println("</td>");
 
+            printWriter.println("<td>" +empDTO.getJob()+ "</td>");
+            printWriter.println("<td>" +empDTO.getDeptDTO().getDname()+ "</td>");
+            printWriter.println("<td>" +empDTO.getDeptDTO().getLoc()+ "</td>");
+            printWriter.println("<td>" +empDTO.getSalGradeDTO().getGrade()+ "</td>");
 
-
+            printWriter.println("</tr>");
+            i++;
+        }
 
         printWriter.println("</table>");
         printWriter.println("</center>");
