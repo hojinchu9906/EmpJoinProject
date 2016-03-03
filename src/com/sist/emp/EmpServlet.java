@@ -81,6 +81,14 @@ public class EmpServlet extends HttpServlet{
         }
 
         printWriter.println("</table>");
+
+        //테이블 하단 선 긋기
+        printWriter.println("<hr width=600>");
+
+
+
+
+
         printWriter.println("</center>");
         printWriter.println("</body>");
         printWriter.println("</html>");
