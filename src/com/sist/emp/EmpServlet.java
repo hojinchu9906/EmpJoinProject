@@ -104,8 +104,18 @@ public class EmpServlet extends HttpServlet{
 
 
         //페이지 넘버 표기하기
+        printWriter.println("<td align=right>");
+        //여기서 파라미터 이름을 page라고 줌.
+        printWriter.println("<a href=EmpServlet?page=" +(curPage>1 ? curPage-1: curPage)+ ">");
+        //이미지 출력
+        printWriter.println("<img src=image/prev.gif border=0>");
+        printWriter.println("</a>");
 
-        printWriter.println("<td>");
+        //페이지 숫자 출력
+        printWriter.println("<a>");
+        printWriter.println("</a>");
+
+
 
 
         printWriter.println("</td>");
