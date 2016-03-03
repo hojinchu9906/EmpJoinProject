@@ -46,7 +46,22 @@ public class EmpServlet extends HttpServlet{
         printWriter.println("<center>");
         printWriter.println("<h3>사원목록</h3>");
 
+        printWriter.println("<table border=0 width=600>");
+        printWriter.println("<tr bgcolor=#ccccff>");
+        printWriter.println("<th>사원번호</th>");
+        printWriter.println("<th>이름</th>");
+        printWriter.println("<th>직위</th>");
+        printWriter.println("<th>근무부서</th>");
+        printWriter.println("<th>근무지역</th>");
+        printWriter.println("<th>사원등급</th>");
+        printWriter.println("</tr>");
 
+
+
+
+
+
+        printWriter.println("</table>");
         printWriter.println("</center>");
         printWriter.println("</body>");
         printWriter.println("</html>");
