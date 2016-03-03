@@ -86,6 +86,38 @@ public class EmpServlet extends HttpServlet{
         printWriter.println("<hr width=600>");
 
 
+        //또하나의 테이블 추가하기
+        printWriter.println("<table border=0 width=600>");
+        //검색 및 찾기 버튼 추가.
+        printWriter.println("<tr>");
+        printWriter.println("<td align=left>");
+        printWriter.println("검색: ");
+        printWriter.println("<select>");
+        printWriter.println("<option>이름</option>");
+        printWriter.println("<option>부서</option>");
+        printWriter.println("<option>직위</option>");
+        printWriter.println("</select>");
+
+        printWriter.println("<input type=text size=10>");
+        printWriter.println("<input type=button value=찾기>");
+        printWriter.println("</td>");
+
+
+        //페이지 넘버 표기하기
+
+        printWriter.println("<td>");
+
+
+        printWriter.println("</td>");
+
+
+        printWriter.println("</tr>");
+        printWriter.println("</table>");
+
+
+
+
+
 
 
 
