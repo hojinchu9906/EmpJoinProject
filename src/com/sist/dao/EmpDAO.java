@@ -153,6 +153,38 @@ public class EmpDAO {
         }
         return total;
     }
+
+    //3.상세보기 (조인 사용)
+    public EmpDTO empDetail(int empno){
+        EmpDTO empDTO=new EmpDTO();
+        try{
+            this.getConnection();
+            String sql="SELECT empno,ename,job,mgr,TO_CHAR(hiredate,'YYYY-MM-DD'),TO_CHAR(sal,'$99,999'),NVL(comm,0), "
+                        +"emp.deptno,dname,loc,grade "
+                        +"FROM emp,dept,salgrade "
+                        +"WHERE emp.deptno=dept.deptno "
+                        +"AND sal BETWEEN losal AND hisal "
+                        +"AND empno=?";
+
+            preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setInt(1, empno);
+
+            ResultSet resultSet=preparedStatement.executeQuery();
+            resultSet.next();
+
+            empDTO.setEmpno(resultSet.getInt(1));
+            //여기서 set을 해줘야 함.
+            empDTO.setEname(resultSet.getString(2));
+
+            resultSet.close();
+
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally {
+            this.disConnection();
+        }
+        return empDTO;
+    }
 }
 
 

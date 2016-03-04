@@ -42,6 +42,29 @@
             out.println("<th>등급</th>");
             out.println("</tr>");
 
+            String color="";
+            int i=0;
+            for(EmpDTO empDTO:arraylist)
+            {
+                if(i%2 ==0)
+                    color="white";
+                else
+                    color="yellow";
+
+                out.println("<tr bgcolor=" +color+ ">");
+                out.println("<td>" +empDTO.getEmpno()+ "</td>");        //사원번호 출력
+                out.println("<td>");
+                    out.println("<a href=../EmpDetailServlet?empno=" +empDTO.getEmpno()+ ">");
+                    out.println(empDTO.getEname() +"</a>");
+                out.println("</td>");
+
+                out.println("<td>" +empDTO.getJob()+ "</td>");
+
+
+                out.println("</tr>");
+                i++;
+            }
+
         out.println("</table>");
 
     out.println("</center>");
