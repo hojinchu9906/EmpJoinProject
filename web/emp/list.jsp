@@ -32,7 +32,17 @@
     out.println("<body>");
     out.println("<center>");
         out.println("<h3>사원목록</h3>");
+        out.println("<table border=0 width=600>");
+            out.println("<tr bgcolor=#ccccff>");
+            out.println("<th>사원번호</th>");       //table header
+            out.println("<th>이름</th>");
+            out.println("<th>직위</th>");
+            out.println("<th>부서</th>");
+            out.println("<th>근무지</th>");
+            out.println("<th>등급</th>");
+            out.println("</tr>");
 
+        out.println("</table>");
 
     out.println("</center>");
     out.println("</body>");
