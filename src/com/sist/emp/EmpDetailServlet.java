@@ -27,7 +27,14 @@ public class EmpDetailServlet extends HttpServlet {
         printWriter.println("<html>");
         printWriter.println("<body>");
         printWriter.println("<center>");
-            printWriter.println("<h3>" +empDTO.getEname()+ "님의 상세 정보입니다.</h3>");    //이부분이 null값이 나온다?
+            printWriter.println("<h3>" +empDTO.getEname()+ "님의 상세 정보입니다.</h3>");    //이부분이 null값이 안나오게 DAO에서 각 필드를 set해줘야함.
+
+            //태아불 서습릿으로 만들기.
+            printWriter.println("<table>");
+
+
+
+            printWriter.println("</table>");
 
         printWriter.println("</center>");
         printWriter.println("</body>");
